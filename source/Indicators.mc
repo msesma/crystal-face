@@ -109,8 +109,13 @@ class Indicators extends Ui.Drawable {
 			/* INDICATOR_TYPE_ALARMS */ settings.alarmCount > 0,
 			/* INDICATOR_TYPE_NOTIFICATIONS */ settings.notificationCount > 0
 		][indicatorType];
+		
+		var themeColor = gThemeColour;
+		if (indicatorType == 0) {
+			themeColor = Graphics.COLOR_BLUE;
+		}
 
-		dc.setColor(value ? gThemeColour : gMeterBackgroundColour, Graphics.COLOR_TRANSPARENT);
+		dc.setColor(value ? themeColor : gMeterBackgroundColour, Graphics.COLOR_TRANSPARENT);
 
 		// Icon.
 		dc.drawText(
