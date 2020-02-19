@@ -189,26 +189,29 @@ class CrystalView extends Ui.WatchFace {
 
 	function updateThemeColours() {
 		var theme = App.getApp().getProperty("Theme");
+		Sys.println("Theme " + theme);
+		
+		var testProperty = App.getApp().getProperty("TestProperty");
+		Sys.println("testProperty " + testProperty);
 
 		// Theme-specific colours.
-		gThemeColour = Graphics.COLOR_GREEN;
-//		gThemeColour = [
-//			Graphics.COLOR_BLUE,     // THEME_BLUE_DARK
-//			Graphics.COLOR_PINK,     // THEME_PINK_DARK
-//			Graphics.COLOR_GREEN,    // THEME_GREEN_DARK
-//			Graphics.COLOR_DK_GRAY,  // THEME_MONO_LIGHT
-//			0x55AAFF,                // THEME_CORNFLOWER_BLUE_DARK
-//			0xFFFFAA,                // THEME_LEMON_CREAM_DARK
-//			Graphics.COLOR_ORANGE,   // THEME_DAYGLO_ORANGE_DARK
-//			Graphics.COLOR_RED,      // THEME_RED_DARK
-//			Graphics.COLOR_WHITE,    // THEME_MONO_DARK
-//			Graphics.COLOR_DK_BLUE,  // THEME_BLUE_LIGHT
-//			Graphics.COLOR_DK_GREEN, // THEME_GREEN_LIGHT
-//			Graphics.COLOR_DK_RED,   // THEME_RED_LIGHT
-//			0xFFFF00,                // THEME_VIVID_YELLOW_DARK
-//			Graphics.COLOR_ORANGE,   // THEME_DAYGLO_ORANGE_LIGHT
-//			Graphics.COLOR_YELLOW    // THEME_CORN_YELLOW_DARK
-//		][theme];
+		gThemeColour = [
+			Graphics.COLOR_BLUE,     // THEME_BLUE_DARK
+			Graphics.COLOR_PINK,     // THEME_PINK_DARK
+			Graphics.COLOR_GREEN,    // THEME_GREEN_DARK
+			Graphics.COLOR_DK_GRAY,  // THEME_MONO_LIGHT
+			0x55AAFF,                // THEME_CORNFLOWER_BLUE_DARK
+			0xFFFFAA,                // THEME_LEMON_CREAM_DARK
+			Graphics.COLOR_ORANGE,   // THEME_DAYGLO_ORANGE_DARK
+			Graphics.COLOR_RED,      // THEME_RED_DARK
+			Graphics.COLOR_WHITE,    // THEME_MONO_DARK
+			Graphics.COLOR_DK_BLUE,  // THEME_BLUE_LIGHT
+			Graphics.COLOR_DK_GREEN, // THEME_GREEN_LIGHT
+			Graphics.COLOR_DK_RED,   // THEME_RED_LIGHT
+			0xFFFF00,                // THEME_VIVID_YELLOW_DARK
+			Graphics.COLOR_ORANGE,   // THEME_DAYGLO_ORANGE_LIGHT
+			Graphics.COLOR_YELLOW    // THEME_CORN_YELLOW_DARK
+		][theme];
 
 		// Light/dark-specific colours.
 		var lightFlags = [
