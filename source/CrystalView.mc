@@ -30,7 +30,20 @@ const BATTERY_MARGIN = SCREEN_MULTIPLIER;
 // x, y are co-ordinates of centre point.
 // width and height are outer dimensions of battery "body".
 function drawBatteryMeter(dc, x, y, width, height) {
-	dc.setColor(gThemeColour, Graphics.COLOR_TRANSPARENT);
+	// #8: battery returned as float. Use floor() to match native. Must match getValueForFieldType().
+	var batteryLevel = Math.floor(Sys.getSystemStats().battery);
+	
+	// Colour based on battery level.
+	var colour;
+	if (batteryLevel <= /* BATTERY_LEVEL_CRITICAL */ 10) {
+		colour = Graphics.COLOR_RED;
+	} else if (batteryLevel <= /* BATTERY_LEVEL_LOW */ 25) {
+		colour = Graphics.COLOR_YELLOW;
+	} else {
+		colour = Graphics.COLOR_GREEN;
+	}
+	
+	dc.setColor(colour, Graphics.COLOR_TRANSPARENT);
 	dc.setPenWidth(/* BATTERY_LINE_WIDTH */ 2);
 
 	// Body.
@@ -52,21 +65,6 @@ function drawBatteryMeter(dc, x, y, width, height) {
 		BATTERY_HEAD_HEIGHT);
 
 	// Fill.
-	// #8: battery returned as float. Use floor() to match native. Must match getValueForFieldType().
-	var batteryLevel = Math.floor(Sys.getSystemStats().battery);		
-
-	// Fill colour based on battery level.
-	var fillColour;
-	if (batteryLevel <= /* BATTERY_LEVEL_CRITICAL */ 10) {
-		fillColour = Graphics.COLOR_RED;
-	} else if (batteryLevel <= /* BATTERY_LEVEL_LOW */ 20) {
-		fillColour = Graphics.COLOR_YELLOW;
-	} else {
-		fillColour = gThemeColour;
-	}
-
-	dc.setColor(fillColour, Graphics.COLOR_TRANSPARENT);
-
 	var lineWidthPlusMargin = (/* BATTERY_LINE_WIDTH */ 2 + BATTERY_MARGIN);
 	var fillWidth = width - (2 * lineWidthPlusMargin);
 	dc.fillRectangle(
@@ -189,10 +187,6 @@ class CrystalView extends Ui.WatchFace {
 
 	function updateThemeColours() {
 		var theme = App.getApp().getProperty("Theme");
-		Sys.println("Theme " + theme);
-		
-		var testProperty = App.getApp().getProperty("TestProperty");
-		Sys.println("testProperty " + testProperty);
 
 		// Theme-specific colours.
 		gThemeColour = [
