@@ -6,13 +6,13 @@
 	
 	<property id="TestProperty" type="number">77</property>
 
-	<property id="HoursColourOverride" type="number">2</property>
-	<property id="MinutesColourOverride" type="number">2</property>
+	<property id="HoursColourOverride" type="number">1</property>
+	<property id="MinutesColourOverride" type="number">1</property>
 
 	<property id="LeftGoalType" type="number">0</property>
 	<property id="RightGoalType" type="number">1</property>
 	<property id="GoalMeterStyle" type="number">0</property>
-	<property id="GoalMeterDigitsStyle" type="number">2</property>
+	<property id="GoalMeterDigitsStyle" type="number">1</property>
 	<property id="CaloriesGoal" type="number">2000</property>
 
 	<property id="FieldCount" type="number">3</property>

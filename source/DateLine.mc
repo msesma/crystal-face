@@ -132,7 +132,7 @@ class DateLine extends Ui.Drawable {
 		var x = (dc.getWidth() / 2) - (length / 2);
 		
 		// Draw day of week.
-		dc.setColor(gMonoDarkColour, Graphics.COLOR_TRANSPARENT);
+		dc.setColor(gMonoLightColour, Graphics.COLOR_TRANSPARENT);
 		dc.drawText(
 			x,
 			mY,
@@ -143,7 +143,7 @@ class DateLine extends Ui.Drawable {
 		x += dc.getTextWidthInPixels(mDayOfWeekString + " ", mFont);
 
 		// Draw day.
-		dc.setColor(gMonoLightColour, Graphics.COLOR_TRANSPARENT);
+		dc.setColor(gThemeColour, Graphics.COLOR_TRANSPARENT);
 		dc.drawText(
 			x,
 			mY,
@@ -154,7 +154,7 @@ class DateLine extends Ui.Drawable {
 		x += dc.getTextWidthInPixels(day + " ", mFont);
 
 		// Draw month.
-		dc.setColor(gMonoDarkColour, Graphics.COLOR_TRANSPARENT);
+		dc.setColor(gMonoLightColour, Graphics.COLOR_TRANSPARENT);
 		dc.drawText(
 			x,
 			mY,

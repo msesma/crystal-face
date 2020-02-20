@@ -218,26 +218,26 @@ class CrystalApp extends App.AppBase {
 	function getFormattedTime(hour, min) {
 		var amPm = "";
 
-		if (!Sys.getDeviceSettings().is24Hour) {
-
-			// #6 Ensure noon is shown as PM.
-			var isPm = (hour >= 12);
-			if (isPm) {
-				
-				// But ensure noon is shown as 12, not 00.
-				if (hour > 12) {
-					hour = hour - 12;
-				}
-				amPm = "p";
-			} else {
-				
-				// #27 Ensure midnight is shown as 12, not 00.
-				if (hour == 0) {
-					hour = 12;
-				}
-				amPm = "a";
-			}
-		}
+//		if (!Sys.getDeviceSettings().is24Hour) {
+//
+//			// #6 Ensure noon is shown as PM.
+//			var isPm = (hour >= 12);
+//			if (isPm) {
+//				
+//				// But ensure noon is shown as 12, not 00.
+//				if (hour > 12) {
+//					hour = hour - 12;
+//				}
+//				amPm = "p";
+//			} else {
+//				
+//				// #27 Ensure midnight is shown as 12, not 00.
+//				if (hour == 0) {
+//					hour = 12;
+//				}
+//				amPm = "a";
+//			}
+//		}
 
 		// #10 If in 12-hour mode with Hide Hours Leading Zero set, hide leading zero. Otherwise, show leading zero.
 		// #69 Setting now applies to both 12- and 24-hour modes.
