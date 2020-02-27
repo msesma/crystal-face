@@ -143,7 +143,7 @@ class DateLine extends Ui.Drawable {
 		x += dc.getTextWidthInPixels(mDayOfWeekString + " ", mFont);
 
 		// Draw day.
-		dc.setColor(gThemeColour, Graphics.COLOR_TRANSPARENT);
+		dc.setColor(gMonoLightColour, Graphics.COLOR_TRANSPARENT);
 		dc.drawText(
 			x,
 			mY,
